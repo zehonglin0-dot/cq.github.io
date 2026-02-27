@@ -108,13 +108,35 @@
       padding: 22px 16px 80px;
     }
 
-    .hero{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px 20px;
-    }
+ .hero{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 20px;
+  text-align:center;   /* 👈 放在这里 */
+}
+
+.hero .title{
+  margin:0;            /* 保持0即可 */
+  font-size:26px;
+  line-height:1.25;
+  letter-spacing:.2px;
+}
+
+.brand-main{
+  display:block;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:0.5px;
+}
+
+.brand-sub{
+  display:block;
+  font-size:20px;
+  font-weight:600;
+  color:#6f6a95;
+}
     .hero .title{
       margin:0;
       font-size: 26px;
