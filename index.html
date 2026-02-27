@@ -532,6 +532,7 @@
           <a href="#sec-5">第五阶段：商品入库流程</a>
           <a href="#sec-6">第六阶段：平台开启海外仓模式</a>
           <a href="#sec-7">第七阶段：订单审核设置</a>
+          <a href="#sec-8">第八阶段：订单状态查看</a>
           <a href="#sec-errors">常见错误提示</a>
           <a href="#sec-flow">标准对接完成流程图</a>
           <a href="#sec-version">文件版本信息</a>
@@ -940,6 +941,30 @@
             </div>
           </div>
         </div>
+        <div class="section" id="sec-8">
+  <h3>第八阶段：订单状态查看</h3>
+
+  <h4 style="margin:10px 0 6px;">8.1 订单发出时间</h4>
+  <ul class="klist">
+    <li>每日 16:00（下午4点）前审核完成的订单，当天发出</li>
+    <li>每日 16:00 后审核完成的订单，次日发出</li>
+  </ul>
+
+  <h4 style="margin:10px 0 6px;">8.2 打包完毕</h4>
+  <div class="path">订单 → 订单管理 → 待发货</div>
+  <ul class="klist">
+    <li>订单进入“打包完成”状态，表示仓库已完成配货与打包</li>
+    <li>等待快递公司揽收</li>
+  </ul>
+
+  <h4 style="margin:10px 0 6px;">8.3 揽收成功</h4>
+  <div class="path">订单 → 订单管理 → 已出库 → 待揽收</div>
+  <ul class="klist">
+    <li>系统显示“已发货”</li>
+    <li>物流公司已完成揽收</li>
+    <li>订单进入运输阶段</li>
+  </ul>
+</div>
 
         <div class="section" id="sec-errors">
           <h3>常见错误提示</h3>
