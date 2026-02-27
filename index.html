@@ -582,11 +582,18 @@
             <li>打开登录页面</li>
             <li>输入账号密码</li>
             <li>
-              点击登录
-              <a href="1.png" target="_blank">
-                <img src="1.png" width="600" style="margin-top:10px; cursor:pointer;">
-           </a>
+               点击登录<br>
+            <img 
+              src="1.png" 
+              style="margin-top:10px; cursor:pointer; max-width:600px; transition:0.3s;"
+              onclick="this.classList.toggle('zoomed')">
             </li>
+
+            <style>
+              .zoomed{
+              max-width:100% !important;
+              }
+            </style>
           </ol>
 
           <div class="shots">
