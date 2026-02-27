@@ -584,16 +584,10 @@
             <li>
                点击登录<br>
             <img 
-              src="1.png" 
-              style="margin-top:10px; cursor:pointer; max-width:600px; transition:0.3s;"
-              onclick="this.classList.toggle('zoomed')">
+               src="1.png" 
+               style="margin-top:10px; cursor:pointer; max-width:600px;"
+               onclick="openImage(this.src)">
             </li>
-
-            <style>
-              .zoomed{
-              max-width:100% !important;
-              }
-            </style>
           </ol>
 
           <div class="shots">
@@ -1458,7 +1452,25 @@
       if(window.scrollY > 360) fabTop.classList.add("show");
       else fabTop.classList.remove("show");
     });
+    // ===== 全屏图片预览（Lightbox）=====
+function openImage(src){
+  const modal = document.getElementById("imgModal");
+  const img = document.getElementById("modalImg");
+  img.src = src;
+  modal.classList.add("open");
+}
 
+function closeImage(){
+  const modal = document.getElementById("imgModal");
+  const img = document.getElementById("modalImg");
+  modal.classList.remove("open");
+  img.src = "";
+}
+
+// ESC 关闭（建议保留）
+document.addEventListener("keydown", (e)=>{
+  if(e.key === "Escape") closeImage();
+});
     // expose
     window.removeMedia = removeMedia;
     window.clearAllMedia = clearAllMedia;
@@ -1469,5 +1481,44 @@
     bindDropZones();
     renderAll();
   </script>
+  <!-- 全屏图片预览层 -->
+<div id="imgModal" class="img-modal" onclick="closeImage()">
+  <span class="close-btn" onclick="event.stopPropagation(); closeImage()">×</span>
+  <img id="modalImg" alt="preview" onclick="event.stopPropagation();">
+</div>
+
+<style>
+  .img-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    z-index:99999;
+    justify-content:center;
+    align-items:center;
+    padding:16px;
+  }
+  .img-modal.open{ display:flex; }
+
+  .img-modal img{
+    max-width:92vw;
+    max-height:92vh;
+    object-fit:contain;
+    border-radius:10px;
+  }
+
+  .close-btn{
+    position:absolute;
+    top:14px;
+    right:18px;
+    font-size:44px;
+    line-height:44px;
+    color:#fff;
+    cursor:pointer;
+    font-weight:700;
+    user-select:none;
+  }
+  .close-btn:hover{ opacity:0.75; }
+</style>
 
 </body></html>
