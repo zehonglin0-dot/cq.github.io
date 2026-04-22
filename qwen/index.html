@@ -1,0 +1,356 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CQ CLOUD FULFILLMENT 泰国云仓｜千易ERP系统对接操作指南（客户接入标准流程）">
+  <title>CQ CLOUD FULFILLMENT 泰国云仓｜千易ERP系统对接操作指南 V3</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="t">
+        <h1 id="brandTitle">CQCLOUDFULFILLMENT 泰国云仓｜千易ERP系统对接操作指南</h1>
+        <p class="sub" id="brandSub">本指南用于指导客户完成：千易ERP系统登录、店铺授权绑定、商品建立、商品配对、入库操作、海外仓启用、订单审核设置。请严格按流程操作，以确保订单正常流转。</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="lang-switch">
+        <button class="btn ghost lang-btn active" type="button" data-lang="zh">中</button>
+        <button class="btn ghost lang-btn" type="button" data-lang="en">EN</button>
+        <button class="btn ghost lang-btn" type="button" data-lang="th">ไทย</button>
+      </div>
+
+      <button class="btn ghost" type="button" id="btnTop">回到顶部</button>
+      <button class="btn" type="button" id="btnPdf">打印 / 导出PDF</button>
+      <button class="btn primary" type="button" id="btnHtml">导出当前HTML</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero" id="top">
+      <h2 class="title" id="heroTitle">
+        <span class="brand-main">CQCLOUDFULFILLMENT 泰国云仓</span>
+        <span class="brand-sub">千易ERP系统对接操作指南</span>
+      </h2>
+      <div class="note ok" id="heroNote"></div>
+    </section>
+
+    <div class="grid">
+      <aside class="card toc">
+        <div class="hd">
+          <h2 id="tocTitle">目录</h2>
+          <span class="pill" id="tocPill">当前页切换</span>
+        </div>
+        <div class="bd">
+          <div class="toc-nav">
+            <button class="toc-btn active" type="button" data-target="sec-files" id="toc-files">一、文件说明</button>
+            <button class="toc-btn" type="button" data-target="sec-1" id="toc-1">第一阶段：账号开通与登录</button>
+            <button class="toc-btn" type="button" data-target="sec-2" id="toc-2">第二阶段：店铺授权绑定</button>
+            <button class="toc-btn" type="button" data-target="sec-3" id="toc-3">第三阶段：建立系统商品（SKU创建）</button>
+            <button class="toc-btn" type="button" data-target="sec-4" id="toc-4">第四阶段：线上商品配对</button>
+            <button class="toc-btn" type="button" data-target="sec-5" id="toc-5">第五阶段：商品入库流程</button>
+            <button class="toc-btn" type="button" data-target="sec-6" id="toc-6">第六阶段：平台开启海外仓模式</button>
+            <button class="toc-btn" type="button" data-target="sec-7" id="toc-7">第七阶段：订单审核设置</button>
+            <button class="toc-btn" type="button" data-target="sec-8" id="toc-8">第八阶段：订单状态查看</button>
+            <button class="toc-btn" type="button" data-target="sec-errors" id="toc-errors">常见错误提示</button>
+            <button class="toc-btn" type="button" data-target="sec-flow" id="toc-flow">标准对接完成流程图</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="card content-shell">
+        <div class="section active" id="sec-files">
+          <h3 id="sec-files-title">一、文件说明</h3>
+          <p class="desc" id="sec-files-desc">本指南用于指导客户完成系统接入全流程。</p>
+          <ul class="klist" id="sec-files-list"></ul>
+
+          <div class="section-footer">
+            <div></div>
+            <button class="btn primary nav-next" type="button" data-go="sec-1" id="nextBtn1">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-1">
+          <h3 id="sec-1-title">第一阶段：账号开通与登录</h3>
+
+          <h4 id="sec-1-sub1">1.1 系统账号开通</h4>
+          <p class="desc" id="sec-1-desc">由我司销售为客户创建ERP账号：</p>
+
+          <div class="fields">
+            <div class="field">
+              <b id="f1-label-1">登录地址</b>
+              <span><a href="https://www.qianyierp.com/views/login" target="_blank" rel="noopener">https://www.qianyierp.com/views/login</a></span>
+            </div>
+            <div class="field">
+              <b id="f1-label-2">登录账号</b>
+              <span id="f1-value-2">客户公司名称</span>
+            </div>
+            <div class="field">
+              <b id="f1-label-3">初始密码</b>
+              <span style="font-family:var(--mono)">Aa123456</span>
+            </div>
+          </div>
+
+          <div class="note bad" id="sec-1-note">⚠ 首次登录后请立即修改密码并妥善保存。</div>
+
+          <h4 id="sec-1-sub2">1.2 登录系统</h4>
+          <ol class="klist" id="sec-1-steps"></ol>
+
+          <img class="step-image doc-image" data-img="1.png" alt="登录页面">
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-files" id="prevBtn1">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-2" id="nextBtn2">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-2">
+          <h3 id="sec-2-title">第二阶段：店铺授权绑定</h3>
+
+          <h4 id="sec-2-sub1">2.1 操作目的</h4>
+          <p class="desc" id="sec-2-desc">将您的电商平台店铺授权给ERP系统，实现订单自动同步。</p>
+
+          <h4 id="sec-2-sub2">2.2 操作路径</h4>
+          <div class="path" id="sec-2-path">设置 → 店铺管理 → 添加平台店铺</div>
+          <ul class="klist" id="sec-2-steps"></ul>
+
+          <img class="step-image doc-image" data-img="2.2.png" alt="添加店铺页面">
+
+          <h4 id="sec-2-sub3">2.3 状态确认</h4>
+          <ul class="klist" id="sec-2-status"></ul>
+
+          <div class="note bad" id="sec-2-note">⚠ 若显示未授权，订单将无法同步。</div>
+          <ul class="klist" id="sec-2-pages"></ul>
+
+          <img class="step-image doc-image" data-img="2.3.png" alt="授权成功页面">
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-1" id="prevBtn2">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-3" id="nextBtn3">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-3">
+          <h3 id="sec-3-title">第三阶段：建立系统商品（SKU创建）</h3>
+          <div class="note bad" id="sec-3-note-top">⚠ 所有发往海外仓的商品，必须提前在ERP建立SKU。</div>
+
+          <h4 id="sec-3-sub1">3.1 添加单品</h4>
+          <div class="path" id="sec-3-path1">商品 → 系统商品 → SKU → 添加SKU → 添加单品</div>
+
+          <table>
+            <thead>
+              <tr>
+                <th style="width:34%;" id="sec-3-th1">填写信息</th>
+                <th id="sec-3-th2">说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td id="sec-3-r1c1">SKU编码（必须唯一）</td><td id="sec-3-r1c2">建议与平台/仓库统一编码策略</td></tr>
+              <tr><td id="sec-3-r2c1">商品名称</td><td id="sec-3-r2c2">清晰可识别（建议含系列/材质/颜色等）</td></tr>
+              <tr><td id="sec-3-r3c1">商品条码</td><td id="sec-3-r3c2">用于扫描识别，建议直接=SKU</td></tr>
+              <tr><td id="sec-3-r4c1">单品毛重（kg）</td><td id="sec-3-r4c2">必须真实</td></tr>
+              <tr><td id="sec-3-r5c1">单品净重（kg）</td><td id="sec-3-r5c2">必须真实</td></tr>
+              <tr><td id="sec-3-r6c1">单品尺寸（长×宽×高 cm）</td><td id="sec-3-r6c2">必须真实</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note warn" id="sec-3-note1">重量与尺寸必须真实填写；该数据将影响运费计算与仓储计费。</div>
+
+          <img class="step-image doc-image" data-img="3.1.0.png" alt="3.1.0">
+          <img class="step-image doc-image" data-img="3.1.1.png" alt="3.1.1">
+          <img class="step-image doc-image" data-img="3.1.2.png" alt="3.1.2">
+          <img class="step-image doc-image" data-img="3.1.3.png" alt="3.1.3">
+
+          <h4 id="sec-3-sub2">3.2 添加组合商品（套装商品）</h4>
+          <p class="desc" id="sec-3-desc2">如销售套装产品：</p>
+          <ol class="klist" id="sec-3-steps2"></ol>
+
+          <div class="path" id="sec-3-path2">新增组合商品 → 填写SKU → 填写商品名称 → 选择商品 → 确认</div>
+
+          <img class="step-image doc-image" data-img="3.2.1.png" alt="3.2.1">
+          <img class="step-image doc-image" data-img="3.2.png" alt="3.2">
+
+          <div class="note bad" id="sec-3-note2">组合商品必须由已存在单品构成；单品未建立前不得创建组合商品。</div>
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-2" id="prevBtn3">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-4" id="nextBtn4">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-4">
+          <h3 id="sec-4-title">第四阶段：线上商品配对</h3>
+
+          <h4 id="sec-4-sub1">4.1 操作目的</h4>
+          <p class="desc" id="sec-4-desc">将平台SKU与ERP系统SKU进行绑定，确保订单正常出库。</p>
+
+          <h4 id="sec-4-sub2">4.2 操作路径</h4>
+          <div class="path" id="sec-4-path">商品 → 线上商品 → 选择店铺 → 选择商品 → 点击配对</div>
+
+          <img class="step-image doc-image" data-img="4.2.png" alt="4.2">
+
+          <ul class="klist" id="sec-4-steps"></ul>
+
+          <div class="note bad" id="sec-4-note">⚠ 未完成配对的商品将无法出库。</div>
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-3" id="prevBtn4">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-5" id="nextBtn5">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-5">
+          <h3 id="sec-5-title">第五阶段：商品入库流程</h3>
+
+          <h4 id="sec-5-sub1">5.1 创建入库单</h4>
+          <div class="path" id="sec-5-path1">库存 → 入库订单 → 新增</div>
+          <ul class="klist" id="sec-5-steps1"></ul>
+
+          <img class="step-image doc-image" data-img="5.1.1.png" alt="5.1.1">
+          <img class="step-image doc-image" data-img="5.1.png" alt="5.1">
+
+          <h4 id="sec-5-sub2">5.2 填写入库信息</h4>
+          <ul class="klist" id="sec-5-steps2"></ul>
+
+          <div class="note" id="sec-5-note1"><b>原厂整箱包装</b>：填写每箱数量、箱数、包装规格</div>
+
+          <img class="step-image doc-image" data-img="5.2.1.png" alt="5.2.1">
+          <img class="step-image doc-image" data-img="5.2.png" alt="5.2">
+
+          <div class="note bad" id="sec-5-note2"><b>混装说明</b>：点击“混装”按钮；同一箱最多2个SKU；不同SKU必须有清晰物理隔离。<br>⚠ 不符合规范仓库有权拒收。</div>
+
+          <h4 id="sec-5-sub3">5.3 提交入库单</h4>
+          <ul class="klist">
+            <li id="sec-5-step3-1">点击保存</li>
+            <li id="sec-5-step3-2">点击提交</li>
+          </ul>
+
+          <img class="step-image doc-image" data-img="5.3.png" alt="5.3">
+
+          <ul class="klist">
+            <li id="sec-5-step3-3">状态显示“已下发”代表入库单成功提交</li>
+            <li id="sec-5-step3-4">复制入库单号并发送至业务对接群，以便仓库提前排仓</li>
+          </ul>
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-4" id="prevBtn5">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-6" id="nextBtn6">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-6">
+          <h3 id="sec-6-title">第六阶段：平台开启海外仓模式</h3>
+
+          <h4 id="sec-6-sub1">6.1 添加海外仓库存</h4>
+          <ul class="klist" id="sec-6-steps1"></ul>
+
+          <h4 id="sec-6-sub2">6.2 海外仓信息</h4>
+          <div class="fields">
+            <div class="field"><b id="sec-6-f1">仓库名称</b><span id="sec-6-v1">CQCLOUDFULFILLMENT-TH-BK-001</span></div>
+            <div class="field"><b id="sec-6-f2">联系人</b><span id="sec-6-v2">Sence</span></div>
+            <div class="field"><b id="sec-6-f3">电话</b><span id="sec-6-v3">0626526356</span></div>
+            <div class="field"><b id="sec-6-f4">仓库地址（泰文）</b><span id="sec-6-v4">เลขที่2/1 ซอย เทียนทะเล 20 แยก 11 Samae Dam, Bang Khun Thian, Bangkok 10150</span></div>
+          </div>
+
+          <div class="note bad" id="sec-6-note">⚠ 必须在平台后台选择“海外仓发货”模式。</div>
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-5" id="prevBtn6">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-7" id="nextBtn7">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-7">
+          <h3 id="sec-7-title">第七阶段：订单审核设置</h3>
+
+          <h4 id="sec-7-sub1">7.1 手动审核</h4>
+          <div class="path" id="sec-7-path1">订单 → 订单管理 → 已售订单 → 审核</div>
+          <ul class="klist" id="sec-7-steps1"></ul>
+
+          <img class="step-image doc-image" data-img="7.1.1.png" alt="7.1.1">
+          <img class="step-image doc-image" data-img="7.1.png" alt="7.1">
+
+          <h4 id="sec-7-sub2">7.2 自动审核（推荐）</h4>
+          <div class="path" id="sec-7-path2">订单 → 订单规则 → 新增规则</div>
+          <ul class="klist" id="sec-7-steps2"></ul>
+
+          <img class="step-image doc-image" data-img="7.2.png" alt="7.2">
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-6" id="prevBtn7">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-8" id="nextBtn8">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-8">
+          <h3 id="sec-8-title">第八阶段：订单状态查看</h3>
+
+          <h4 id="sec-8-sub1">8.1 订单发出时间</h4>
+          <ul class="klist" id="sec-8-steps1"></ul>
+
+          <h4 id="sec-8-sub2">8.2 打包完毕</h4>
+          <div class="path" id="sec-8-path1">订单 → 订单管理 → 待发货</div>
+          <ul class="klist" id="sec-8-steps2"></ul>
+
+          <img class="step-image doc-image" data-img="8.2.png" alt="8.2">
+
+          <h4 id="sec-8-sub3">8.3 揽收成功</h4>
+          <div class="path" id="sec-8-path2">订单 → 订单管理 → 已出库 → 待揽收</div>
+          <ul class="klist" id="sec-8-steps3"></ul>
+
+          <img class="step-image doc-image" data-img="8.3.png" alt="8.3">
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-7" id="prevBtn8">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-errors" id="nextBtn9">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-errors">
+          <h3 id="sec-errors-title">常见错误提示</h3>
+          <table>
+            <thead>
+              <tr>
+                <th style="width:28%;" id="sec-errors-th1">问题</th>
+                <th id="sec-errors-th2">原因</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td id="err-r1c1">订单未同步</td><td id="err-r1c2">店铺未授权</td></tr>
+              <tr><td id="err-r2c1">订单无法出库</td><td id="err-r2c2">未配对商品</td></tr>
+              <tr><td id="err-r3c1">运费异常</td><td id="err-r3c2">SKU尺寸重量错误</td></tr>
+              <tr><td id="err-r4c1">仓库拒收</td><td id="err-r4c2">未提交入库单或混装不规范</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note ok" id="sec-errors-note">排查顺序建议：<b>店铺授权状态</b> → <b>线上商品是否配对</b> → <b>SKU尺寸重量</b> → <b>入库单是否已下发</b></div>
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-8" id="prevBtn9">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-flow" id="nextBtn10">下一步</button>
+          </div>
+        </div>
+
+        <div class="section" id="sec-flow">
+          <h3 id="sec-flow-title">标准对接完成流程图</h3>
+          <div class="flow" id="sec-flow-items"></div>
+
+          <div class="section-footer">
+            <button class="btn nav-prev" type="button" data-go="sec-errors" id="prevBtn10">上一步</button>
+            <button class="btn primary nav-next" type="button" data-go="sec-files" id="backStartBtn">返回开始</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer" id="footerText">CQCLOUDFULFILLMENT · ERP Integration Guide</div>
+  </div>
+
+  <script src="./js/i18n.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
